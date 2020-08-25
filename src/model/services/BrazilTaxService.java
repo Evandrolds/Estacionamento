@@ -2,10 +2,11 @@ package model.services;
 
 /**
  *
- * @author Evandro
+ * @author Evandro          Projeto com Interface!!!
  */
-public class BrazilTaxService {
+public class BrazilTaxService implements TaxService {
 
+    @Override
     public double tax(double amout) {
         if (amout <= 100.0) {
             return amout * 0.2;

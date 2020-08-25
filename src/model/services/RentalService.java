@@ -3,17 +3,17 @@ package model.services;
 import model.entities.CarRental;
 import model.entities.Invoice;
 
-/**
- *
+/**       
+ *                              
  * @author Evandro
  */
 public class RentalService {
 
     private Double pricePerHour;
     private Double pricePerDay;
-    private BrazilTaxService taxServices;
+    private TaxService taxServices;
 
-    public RentalService(Double pricePerHour, Double pricePerDay, BrazilTaxService taxServices) {
+    public RentalService(Double pricePerHour, Double pricePerDay,TaxService taxServices) {
         this.pricePerHour = pricePerHour;
         this.pricePerDay = pricePerDay;
         this.taxServices = taxServices;
@@ -53,11 +53,11 @@ public class RentalService {
         carRental.setInvoice(new Invoice(basicPayment, tax));
     }
 
-    public BrazilTaxService getTexServices() {
+    public TaxService getTaxServices() {
         return taxServices;
     }
 
-    public void setTexServices(BrazilTaxService texServices) {
-        this.taxServices = texServices;
+    public void setTaxServices(TaxService taxServices) {
+        this.taxServices = taxServices;
     }
 }
